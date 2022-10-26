@@ -15,9 +15,11 @@ class Point {
 public class Main {
     public static void main(String[] args) {
         int[] a = {1, 2, 4};
-//        a = new int[3];
-//        a[0] = 1;
-        System.out.println(a[a.length - 1]);
+        int b[];
+        b = new int[3];
+        a[0] = 10;
+        System.out.println(Arrays.toString(a));
+        System.out.println(a[a.length- 1]);
 //        a = {1, 2, 4};
 
         int table[][] = new int[3][4];
@@ -27,7 +29,7 @@ public class Main {
             }
         }
         for (int r = 0; r < 3; r++) {
-            for (int c = 0; c < 4; c++) {
+            for (int c = 0; c < table[r].length; c++) {
                 System.out.print(table[r][c]);
                 System.out.print(' ');
             }
@@ -44,6 +46,7 @@ public class Main {
                 {4, 5, 6},
                 {7, 8, 9, 10}
         };
+
         for (int j : a) {
             System.out.println(j);
         }
@@ -67,7 +70,16 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
+
         int[] numbers = Arrays.stream(input.split(" ")).mapToInt(Integer::parseInt).toArray();
+
+        String line = scanner.nextLine();
+        String[] lineArray = line.split(" ");
+        int[] intArr = new int[lineArray.length];
+        for(int i = 0; i < lineArray.length; i++){
+            intArr[i] = Integer.parseInt(lineArray[i]);
+        }
+
     }
 
     static String toUpper(String s){
